@@ -32,7 +32,7 @@ IdGenerationPool::~IdGenerationPool()
 bool
 IdGenerationPool::Allocate(Id32& id)
 {
-    if (this->freeIdsSize < 1024)
+    if (this->freeIdsSize < 0x00FFFFFF)
     {
         this->generations.Append(0);
         id = CreateId(this->generations.Size() - 1, 0);
