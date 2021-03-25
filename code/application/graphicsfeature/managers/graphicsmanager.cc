@@ -140,9 +140,11 @@ void GraphicsManager::InitDestroyModelProcessor()
             {
                 ModelEntityData const& modelEntityData = modelEntityDatas[i];
 
+				Models::ModelContext::SetTransform(modelEntityData.gid, Math::translation({ 0,10000,0 }));
+
                 Visibility::ObservableContext::DeregisterEntity(modelEntityData.gid);
-                Models::ModelContext::DeregisterEntity(modelEntityData.gid);
-                Graphics::DestroyEntity(modelEntityData.gid);
+                //Models::ModelContext::DeregisterEntity(modelEntityData.gid);
+                //Graphics::DestroyEntity(modelEntityData.gid);
             }
         }
     };

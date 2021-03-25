@@ -116,6 +116,8 @@ StreamModelPool::DestroyModelInstance(const ModelInstanceId id)
     SizeT& instances = this->modelAllocator.Get<InstanceCount>(id.model);
     instances--;
     this->modelInstanceAllocator.Get<ModelNodeInstances>(id.instance).Clear();
+    this->modelInstanceAllocator.Get<ModelNodeBits>(id.instance).Clear();
+    this->modelInstanceAllocator.Get<ModelNodeTypes>(id.instance).Clear();
     this->modelInstanceAllocator.Dealloc(id.instance);
 }
 

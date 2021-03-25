@@ -64,7 +64,7 @@ public:
     struct DrawPacket;
     struct Instance
     {
-        const ModelNode::Instance* parent;          // pointer to parent
+        const ModelNode::Instance* parent = nullptr;          // pointer to parent
         ModelNode* node;                            // pointer to resource-level node
         Util::FixedArray<Instance*> children;       // children
         bool active : 1;
